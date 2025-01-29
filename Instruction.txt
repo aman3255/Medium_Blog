@@ -1,0 +1,29 @@
+Lecture slide :- https://projects.100xdevs.com/tracks/blog/blog-1
+1. npm create hono@latest
+
+2. npm i prisma
+   npx prisma init
+
+3. npx prisma migrate dev --name init_schema
+
+4. npx prisma generate --no-engine
+
+Timestamp - 33
+
+# Deploy backend.
+5. npx wrangler login
+6. npx wrangler whoami
+7. npm run deploy
+
+in common_backend_frontend
+1. npm init -y (for TS)
+2. npx tsc --init
+in tsconfig.json change "rootDir": "./src" and "outDir": "./dist" and uncomment the "declaration": true(uncomment the "declaration":true for Required for Publishing in monorepo)
+3. create src folder and in src create index.ts 
+
+Now deploying npm module.
+1. Go to package.json change "name": "medium-common_backend_fronted" and change "main": "dist/index.js" 
+2. run the -> tsc -b
+3. create .npmignore in common_backend_fronted and in .npmignore write src.
+4. npm login
+5. npm publish --access public
