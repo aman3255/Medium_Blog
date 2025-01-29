@@ -1,0 +1,7 @@
+src
+node_modules/
+
+# IDE files
+.vscode/
+.idea/
+.DS_Store
