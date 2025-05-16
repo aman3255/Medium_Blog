@@ -27,7 +27,6 @@ userRouter.post('/signup', async (c) => {
     return c.json({
       message: "Invalid input data(Inputs are not correct)"
     })
-
   }
 
   // ================ Prisma ======================
@@ -64,7 +63,7 @@ userRouter.post('/signup', async (c) => {
 
 // ====== Signin route for user ======
 userRouter.post('/signin', async (c) => {
-  const body = await c.req.json(); 
+  const body = await c.req.json();
 
   //Zod validation for signin
   const { success } = signinInput.safeParse(body);
