@@ -1,32 +1,49 @@
-import { Appbar } from '../components/Appbar';
-import { BlogCard } from '../components/BlogCard';
-import { useBlogs } from '../hooks/index';
+import { Appbar } from "../components/Appbar"
+import { BlogCard } from "../components/BlogCard"
+import { BlogSkeleton } from "../components/BlogSkeleton";
+import { useBlogs } from "../hooks"
 
-const Blogs = () => {
-    const { loading, blogs } = useBlogs();
+export const Blogs = () => {
 
-    if (loading) {
-        return <div>Loading...</div>;
-    }
+  const {loading, blogs} = useBlogs();
 
-    return (
-        <div>
-            <Appbar />
-            <div className="flex justify-center">
-                <div>
-                    {blogs.map((blog) => (
-                        <BlogCard
-                            id={blog.id} // Assuming blog has an id field
-                            authorName={blog.author.name} // Assuming a static author name for now
-                            title={blog.title} // Assuming a static title for now
-                            content={blog.content} // Assuming a static content for now
-                            publishedDate={"2023-10-01"} // Assuming a static published date for now
-                        />
-                    ))}
-                </div>
-            </div>
+    if (loading){
+      return <div>
+        <Appbar/>
+        <div className="flex justify-center">
+          <div>
+          <BlogSkeleton />
+          <BlogSkeleton />
+          <BlogSkeleton />
+          <BlogSkeleton />
+          <BlogSkeleton />
+          <BlogSkeleton />
+          <BlogSkeleton />
+          <BlogSkeleton />
+          </div>
+          
         </div>
-    );
-};
+      </div>
+    }
+  
 
-export default Blogs;
+  return (
+    <div>
+       <Appbar />
+      <div  className="flex justify-center">
+        <div className="">
+        {blogs.map(blog => <BlogCard 
+         id={blog.id}
+         authorname ={blog.author.name || "Jaser"}
+         title={blog.title}
+         content={blog.content}
+         publishedDate={"23rd June"} />) }
+        
+       
+      </div>
+      </div>
+    </div>
+    
+  )
+}
+

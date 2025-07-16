@@ -1,20 +1,22 @@
-import React from "react";
-import { Qoute } from "../components/Qoute";
-import { Auth } from "../components/Auth";
 
-const Signup = () => {
-    return (
+import Auth from "../components/Auth"
+import Quotes from "../components/Quotes"
+
+export const Signup = () => {
+  return (
+    <div>
+      <div className="grid grid-cols-1 lg:grid-cols-2">
         <div>
-            <div className="grid grid-cols-1 lg:grid-cols-2">
-                <div>
-                    <Auth type="signup"/> 
-                </div>
-                <div className="hidden lg:block"> 
-                    <Qoute />
-                </div>
-            </div>
+          <Auth type="signup"/>
         </div>
-    )
-};
+        <div className="hidden lg:block">
+          <Quotes/>
+        </div>
+   
+      </div>
+        
+    </div>
+  )
+}
 
-export default Signup;
+export default Signup
