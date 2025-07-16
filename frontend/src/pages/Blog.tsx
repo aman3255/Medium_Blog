@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useBlog } from "../hooks"
-import { FullBlog } from "../components/FullBlog";
+// import { FullBlog } from "../components/FullBlog";
 import { Appbar } from "../components/Appbar";
 import { BlogSkeleton } from "../components/BlogSkeleton";
 
@@ -31,7 +31,7 @@ export const Blog = () => {
   }
   return (
     <div>
-      <FullBlog blog={blog} />
+      {/* <FullBlog blog={blog} /> */}
     </div>
   )
 }
