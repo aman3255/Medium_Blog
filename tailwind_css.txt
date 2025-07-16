@@ -5,3 +5,8 @@ flex justify-center flex-col - center the item verticalyy on left side
 visible md:invisible -> If you go above md(medium break point) then it would be invisible and by default visible
 {JSON.stringify(postInputs)} -> display the contents of a JavaScript object (postInputs) & debugging purposes.
 
+{
+    "username" : "gill32@gmail.com",
+    "name" : "Shubham gill",
+    "password" : "Gill@123"
+}
