@@ -28,4 +28,5 @@ Now deploying npm module.
 4. npm login
 5. npm publish --access public
 
+Instruction.txt
 

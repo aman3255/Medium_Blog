@@ -51,7 +51,7 @@ blogRouter.post('/', async (c) => {  //postman -> POST -> http://localhost:3000/
 
     //For zod validation for blog body input.
     const { success } = createBlogInput.safeParse(body);
-    if(!success){
+    if (!success) {
         c.status(411);
         return c.json({
             message: "Invalid blog are not correct(Inputs are not correct)"
@@ -86,8 +86,8 @@ blogRouter.post('/', async (c) => {  //postman -> POST -> http://localhost:3000/
 blogRouter.put('/', async (c) => {   // postman -> PUT -> http://localhost:3000/api/v1/blog
     const body = await c.req.json();
 
-    const { success } =  updateBlogInput.safeParse(body);
-    if(!success){
+    const { success } = updateBlogInput.safeParse(body);
+    if (!success) {
         c.status(411);
         return c.json({
             message: "The Upate input are not valid(Upate values are not correct)"
@@ -115,7 +115,8 @@ blogRouter.put('/', async (c) => {   // postman -> PUT -> http://localhost:3000/
             }
         })
         return c.json({
-            id: blog.id
+            id: blog.id,
+            message: "Blog post updated successfully"
         })
     } catch (error) {
         c.status(201);
@@ -143,7 +144,7 @@ blogRouter.get('/bulk', async (c) => {
             content: true,
             title: true,
             id: true,
-            author : {
+            author: {
                 select: {
                     name: true
                 }
@@ -178,7 +179,7 @@ blogRouter.get('/:id', async (c) => {
                 id: true,
                 title: true,
                 content: true,
-                author : {
+                author: {
                     select: {
                         name: true
                     }
